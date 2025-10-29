@@ -10,4 +10,3 @@ nav:
   - title: "关于"  # 新增关于页导航
     url: /about/
 
-theme: jekyll-theme-architect 
