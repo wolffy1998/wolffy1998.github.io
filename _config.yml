@@ -1,1 +1,13 @@
+title: "我的博客"
+description: "技术博客"
+baseurl: ""
+url: "https://wolffy1998.github.io/"
+
+# 添加导航链接（会显示在页面顶部导航栏）
+nav:
+  - title: "首页"
+    url: /
+  - title: "关于"  # 新增关于页导航
+    url: /about/
+
 theme: jekyll-theme-architect 
