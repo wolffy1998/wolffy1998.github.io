@@ -48,16 +48,10 @@
         <div class="hero-socials">
           <!-- 自定义：替换下方 href 为你的真实社交链接 -->
           <a href="https://github.com/wolffy1998" target="_blank" rel="noopener" aria-label="GitHub">
-            <i class="fab fa-github"></i>
+            <img src="assets/github.png" alt="GitHub">
           </a>
-          <a href="https://twitter.com/wolffy1998" target="_blank" rel="noopener" aria-label="Twitter/X">
-            <i class="fab fa-x-twitter"></i>
-          </a>
-          <a href="https://linkedin.com/in/wolffy1998" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-          <a href="mailto:wolffy1998@example.com" aria-label="邮箱">
-            <i class="fas fa-envelope"></i>
+          <a href="mailto:wolffy1998@foxmail.com" aria-label="邮箱">
+            <img src="assets/email.png" alt="邮箱">
           </a>
         </div>
       </div>
@@ -182,27 +176,16 @@
       <h2 class="section-title">关于我</h2>
       <div class="about-content">
         <div class="about-text">
-          <p>
-            你好！我是 <strong>Wolffy1998</strong>，一名热爱编程与创造的开发者。
-            我喜欢参与各类项目，涵盖 Web 应用、开发者工具以及开源社区贡献。
-          </p>
-          <p>
-            我相信开源和社区的力量。欢迎浏览我的项目、参与我的仓库，或者随时与我交流！
-          </p>
-          <!-- 自定义：修改下方统计数据 -->
-          <div class="about-stats">
-            <div class="stat">
-              <span class="stat-number">4+</span>
-              <span class="stat-label">项目</span>
-            </div>
-            <div class="stat">
-              <span class="stat-number">10+</span>
-              <span class="stat-label">贡献</span>
-            </div>
-            <div class="stat">
-              <span class="stat-number">∞</span>
-              <span class="stat-label">好奇心</span>
-            </div>
+          <div class="about-image">
+            <img src="assets/about.png" alt="关于 Wolffy1998">
+          </div>
+          <div class="about-intro">
+            <p>
+              你好！我是 <strong>Wolffy1998</strong>，一名热爱编程与创造的开发者。
+            </p>
+            <p>
+              我喜欢探索新技术，享受创造的乐趣。欢迎浏览我的项目，或者随时与我交流！
+            </p>
           </div>
         </div>
       </div>
@@ -216,47 +199,22 @@
       <p class="section-subtitle">欢迎随时联系我，以下是可以找到我的方式</p>
 
       <div class="contact-grid">
-        <!--
-          自定义联系卡片：
-          1. 修改 href 为真实的链接（邮箱地址、社交主页等）
-          2. 修改 p 标签内显示的文字
-          3. 图标可在 https://fontawesome.com/icons 查找替换
-        -->
-
         <!-- 邮箱 -->
-        <a href="mailto:wolffy1998@example.com" class="contact-card">
+        <a href="mailto:wolffy1998@foxmail.com" class="contact-card">
           <div class="contact-icon">
-            <i class="fas fa-envelope"></i>
+            <img src="assets/email.png" alt="邮箱">
           </div>
           <h3>邮箱</h3>
-          <p>wolffy1998@example.com</p>
+          <p>wolffy1998@foxmail.com</p>
         </a>
 
         <!-- GitHub -->
         <a href="https://github.com/wolffy1998" target="_blank" rel="noopener" class="contact-card">
           <div class="contact-icon">
-            <i class="fab fa-github"></i>
+            <img src="assets/github.png" alt="GitHub">
           </div>
           <h3>GitHub</h3>
           <p>@wolffy1998</p>
-        </a>
-
-        <!-- Twitter / X -->
-        <a href="https://twitter.com/wolffy1998" target="_blank" rel="noopener" class="contact-card">
-          <div class="contact-icon">
-            <i class="fab fa-x-twitter"></i>
-          </div>
-          <h3>Twitter / X</h3>
-          <p>@wolffy1998</p>
-        </a>
-
-        <!-- Discord -->
-        <a href="https://discord.gg/yourserver" target="_blank" rel="noopener" class="contact-card">
-          <div class="contact-icon">
-            <i class="fab fa-discord"></i>
-          </div>
-          <h3>Discord</h3>
-          <p>加入我的服务器</p>
         </a>
       </div>
     </div>
@@ -265,7 +223,7 @@
   <!-- 页脚 -->
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2024-2026 Wolffy1998. 用 <i class="fas fa-heart"></i> 构建，托管于 GitHub Pages。</p>
+      <p>&copy; 2024-<span id="current-year"></span> Wolffy1998. 托管于 GitHub Pages。</p>
     </div>
   </footer>
 

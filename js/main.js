@@ -1,3 +1,9 @@
+// Dynamic footer year
+document.addEventListener('DOMContentLoaded', () => {
+  const yearEl = document.getElementById('current-year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+});
+
 // Mobile navigation toggle
 document.addEventListener('DOMContentLoaded', () => {
   const navToggle = document.querySelector('.nav-toggle');
