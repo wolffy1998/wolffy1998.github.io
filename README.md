@@ -1,8 +1,51 @@
-# 我的项目展示
+# Wolffy1998 - Personal Homepage
 
-### 一、MAME-SL-GameList 编辑器
+Personal portfolio website hosted on GitHub Pages at [wolffy1998.github.io](https://wolffy1998.github.io).
 
-MAME 模拟器家用机游戏列表名称编辑工具：
+## Structure
 
-![[image-20251029131419964](https://wolffy1998.github.io/MAME-SL-GameList/)](https://cdn.jsdelivr.net/gh/wolffy1998/PicGo//image-20251029131419964.png)
+```
+.
+├── index.html          # Main homepage
+├── css/
+│   └── style.css       # Stylesheets
+├── js/
+│   └── main.js         # JavaScript for interactivity
+├── .github/
+│   └── workflows/
+│       └── deploy.yml  # CI/CD for GitHub Pages
+├── .nojekyll           # Disable Jekyll processing
+└── README.md
+```
 
+## Features
+
+- Responsive design (mobile, tablet, desktop)
+- Dark theme with modern UI
+- Project showcase cards with tags and links
+- Contact section with social links
+- Smooth scrolling navigation
+- CSS animations and transitions
+
+## Customization
+
+Edit the following to personalize:
+
+1. **index.html** - Update project cards, social links, email, and bio text
+2. **Avatar** - Replace the hero-avatar image URL with your GitHub avatar
+3. **Projects** - Modify project names, descriptions, tags, and links
+4. **Contact** - Update email address and social media URLs
+
+## Deployment
+
+This site uses GitHub Actions for automated deployment:
+
+1. Push to the `main` branch
+2. GitHub Actions will automatically build and deploy
+3. Go to your repository **Settings > Pages** and select:
+   - Source: **GitHub Actions**
+4. Visit `https://wolffy1998.github.io`
+
+## License
+
+MIT
