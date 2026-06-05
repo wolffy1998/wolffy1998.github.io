@@ -1,6 +1,6 @@
 # Wolffy1998 - 个人主页
 
-这是一个为 GitHub Pages 构建的个人主页网站，部署在 [wolffy1998.github.io](https://wolffy1998.github.io)。
+这是一个为 GitHub Pages 构建的个人主页网站，部署在 [username.github.io](https://username.github.io)。
 
 ## 目录结构
 
@@ -24,26 +24,26 @@
 
 ### 第一步：推送到 GitHub
 
-将此文件夹中的所有文件推送到你的 GitHub 仓库 `wolffy1998/wolffy1998.github.io` 的 `main` 分支：
+将此文件夹中的所有文件推送到你的 GitHub 仓库 `username/username.github.io` 的 `main` 分支：
 
 ```bash
 cd "此项目文件夹"
 git init
 git add .
 git commit -m "初始化个人主页"
-git remote add origin https://github.com/wolffy1998/wolffy1998.github.io.git
+git remote add origin https://github.com/username/username.github.io.git
 git branch -M main
 git push -u origin main
 ```
 
 ### 第二步：配置 GitHub Pages
 
-1. 打开你的仓库页面：`https://github.com/wolffy1998/wolffy1998.github.io`
+1. 打开你的仓库页面：`https://github.com/username/username.github.io`
 2. 点击 **Settings（设置）** > **Pages（页面）**
 3. 在 **Build and deployment** 部分：
    - **Source** 选择：**GitHub Actions**
 4. 等待 GitHub Actions 自动构建完成（约 1-2 分钟）
-5. 访问 `https://wolffy1998.github.io` 即可查看你的主页
+5. 访问 `https://username.github.io` 即可查看你的主页
 
 ---
 
@@ -80,7 +80,7 @@ git push -u origin main
 
 ```html
 <div class="hero-socials">
-  <a href="https://github.com/wolffy1998" target="_blank" rel="noopener" aria-label="GitHub">
+  <a href="https://github.com/username" target="_blank" rel="noopener" aria-label="GitHub">
     <i class="fab fa-github"></i>
   </a>
   <!-- 更多链接... -->
@@ -176,12 +176,12 @@ git push -u origin main
 
 ```html
 <div class="contact-grid">
-  <a href="mailto:wolffy1998@example.com" class="contact-card">
+  <a href="mailto:username@example.com" class="contact-card">
     <div class="contact-icon">
       <i class="fas fa-envelope"></i>       <!-- 联系方式图标 -->
     </div>
     <h3>邮箱</h3>                            <!-- 标题 -->
-    <p>wolffy1998@example.com</p>            <!-- 显示的联系信息 -->
+    <p>username@example.com</p>            <!-- 显示的联系信息 -->
   </a>
   <!-- 更多联系卡片... -->
 </div>
@@ -270,7 +270,7 @@ git push -u origin main
 
 ### Q: 404 错误怎么办？
 
-确认仓库名称是 `wolffy1998.github.io`，且 Settings > Pages 中已选择 **GitHub Actions** 作为构建源。
+确认仓库名称是 `username.github.io`，且 Settings > Pages 中已选择 **GitHub Actions** 作为构建源。
 
 ---
 
