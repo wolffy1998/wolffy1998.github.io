@@ -1,50 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wolffy1998 - Personal Homepage</title>
-  <meta name="description" content="Welcome to Wolffy1998's personal homepage - showcasing projects and work">
+  <title>Wolffy1998 - 个人主页</title>
+  <meta name="description" content="Wolffy1998 的个人主页 - 展示项目与作品">
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <!-- Navigation -->
+  <!-- 导航栏 -->
   <nav class="navbar">
     <div class="container">
       <a href="#home" class="nav-logo">Wolffy1998</a>
-      <button class="nav-toggle" aria-label="Toggle navigation">
+      <button class="nav-toggle" aria-label="切换导航菜单">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-menu">
-        <li><a href="#home" class="nav-link">Home</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="#home" class="nav-link">首页</a></li>
+        <li><a href="#projects" class="nav-link">项目</a></li>
+        <li><a href="#about" class="nav-link">关于</a></li>
+        <li><a href="#contact" class="nav-link">联系</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- 首页 -->
   <section id="home" class="hero">
     <div class="container">
       <div class="hero-content">
         <div class="hero-avatar">
-          <img src="https://avatars.githubusercontent.com/u/placeholder?v=4" alt="Wolffy1998 Avatar">
+          <!-- 自定义：替换下方 src 为你的头像图片链接 -->
+          <img src="https://avatars.githubusercontent.com/u/placeholder?v=4" alt="Wolffy1998 头像">
         </div>
-        <h1 class="hero-title">Hi, I'm <span class="highlight">Wolffy1998</span></h1>
-        <p class="hero-subtitle">Developer &middot; Creator &middot; Open Source Enthusiast</p>
+        <h1 class="hero-title">你好，我是 <span class="highlight">Wolffy1998</span></h1>
+        <p class="hero-subtitle">开发者 · 创作者 · 开源爱好者</p>
         <p class="hero-description">
-          Welcome to my personal space on the web. Here you'll find my projects, contributions, and ways to connect.
+          欢迎来到我的个人空间。在这里你可以找到我的项目、开源贡献以及与我取得联系的方式。
         </p>
         <div class="hero-buttons">
-          <a href="#projects" class="btn btn-primary">View Projects</a>
-          <a href="#contact" class="btn btn-outline">Get in Touch</a>
+          <a href="#projects" class="btn btn-primary">查看项目</a>
+          <a href="#contact" class="btn btn-outline">联系我</a>
         </div>
         <div class="hero-socials">
+          <!-- 自定义：替换下方 href 为你的真实社交链接 -->
           <a href="https://github.com/wolffy1998" target="_blank" rel="noopener" aria-label="GitHub">
             <i class="fab fa-github"></i>
           </a>
@@ -54,27 +56,39 @@
           <a href="https://linkedin.com/in/wolffy1998" target="_blank" rel="noopener" aria-label="LinkedIn">
             <i class="fab fa-linkedin-in"></i>
           </a>
+          <a href="mailto:wolffy1998@example.com" aria-label="邮箱">
+            <i class="fas fa-envelope"></i>
+          </a>
         </div>
       </div>
     </div>
     <div class="hero-bg"></div>
   </section>
 
-  <!-- Projects Section -->
+  <!-- 项目展示 -->
   <section id="projects" class="projects">
     <div class="container">
-      <h2 class="section-title">My Projects</h2>
-      <p class="section-subtitle">A selection of things I've built and contributed to</p>
+      <h2 class="section-title">我的项目</h2>
+      <p class="section-subtitle">我构建和参与的部分项目</p>
 
       <div class="projects-grid">
-        <!-- Project Card 1 -->
+        <!--
+          自定义项目卡片：
+          1. 复制下方整个 project-card div 可添加更多项目
+          2. 修改项目图标（fas fa-xxx 可替换为其他图标，见 https://fontawesome.com/icons ）
+          3. 修改项目名称和描述
+          4. 修改技术标签文字
+          5. 修改 GitHub 链接和演示链接
+        -->
+
+        <!-- 项目卡片 1 -->
         <div class="project-card">
           <div class="project-icon">
             <i class="fas fa-code"></i>
           </div>
-          <h3 class="project-title">Project Alpha</h3>
+          <h3 class="project-title">项目 Alpha</h3>
           <p class="project-description">
-            A brief description of your first amazing project. Explain what it does and the problem it solves.
+            在这里简要描述你的第一个项目。说明它是做什么的，解决了什么问题。
           </p>
           <div class="project-tags">
             <span class="tag">Python</span>
@@ -82,22 +96,22 @@
           </div>
           <div class="project-links">
             <a href="https://github.com/wolffy1998/project-alpha" target="_blank" rel="noopener">
-              <i class="fab fa-github"></i> Code
+              <i class="fab fa-github"></i> 源代码
             </a>
             <a href="#" target="_blank" rel="noopener">
-              <i class="fas fa-external-link-alt"></i> Demo
+              <i class="fas fa-external-link-alt"></i> 演示
             </a>
           </div>
         </div>
 
-        <!-- Project Card 2 -->
+        <!-- 项目卡片 2 -->
         <div class="project-card">
           <div class="project-icon">
             <i class="fas fa-mobile-alt"></i>
           </div>
-          <h3 class="project-title">Project Beta</h3>
+          <h3 class="project-title">项目 Beta</h3>
           <p class="project-description">
-            Description of your second project. Highlight key features and technologies used.
+            在这里描述你的第二个项目。突出核心功能和使用的技术栈。
           </p>
           <div class="project-tags">
             <span class="tag">React</span>
@@ -105,19 +119,19 @@
           </div>
           <div class="project-links">
             <a href="https://github.com/wolffy1998/project-beta" target="_blank" rel="noopener">
-              <i class="fab fa-github"></i> Code
+              <i class="fab fa-github"></i> 源代码
             </a>
           </div>
         </div>
 
-        <!-- Project Card 3 -->
+        <!-- 项目卡片 3 -->
         <div class="project-card">
           <div class="project-icon">
             <i class="fas fa-robot"></i>
           </div>
-          <h3 class="project-title">Project Gamma</h3>
+          <h3 class="project-title">项目 Gamma</h3>
           <p class="project-description">
-            Describe your third project. Maybe it's a bot, a tool, or something experimental.
+            在这里描述你的第三个项目。可以是一个机器人、工具或者实验性项目。
           </p>
           <div class="project-tags">
             <span class="tag">AI/ML</span>
@@ -125,22 +139,22 @@
           </div>
           <div class="project-links">
             <a href="https://github.com/wolffy1998/project-gamma" target="_blank" rel="noopener">
-              <i class="fab fa-github"></i> Code
+              <i class="fab fa-github"></i> 源代码
             </a>
             <a href="#" target="_blank" rel="noopener">
-              <i class="fas fa-book"></i> Docs
+              <i class="fas fa-book"></i> 文档
             </a>
           </div>
         </div>
 
-        <!-- Project Card 4 -->
+        <!-- 项目卡片 4 -->
         <div class="project-card">
           <div class="project-icon">
             <i class="fas fa-terminal"></i>
           </div>
-          <h3 class="project-title">Project Delta</h3>
+          <h3 class="project-title">项目 Delta</h3>
           <p class="project-description">
-            A CLI tool or developer utility. Explain what makes it useful and unique.
+            命令行工具或开发者实用工具。描述它的用途和独特之处。
           </p>
           <div class="project-tags">
             <span class="tag">Go</span>
@@ -148,7 +162,7 @@
           </div>
           <div class="project-links">
             <a href="https://github.com/wolffy1998/project-delta" target="_blank" rel="noopener">
-              <i class="fab fa-github"></i> Code
+              <i class="fab fa-github"></i> 源代码
             </a>
           </div>
         </div>
@@ -156,38 +170,38 @@
 
       <div class="projects-more">
         <a href="https://github.com/wolffy1998?tab=repositories" target="_blank" rel="noopener" class="btn btn-outline">
-          <i class="fab fa-github"></i> View All on GitHub
+          <i class="fab fa-github"></i> 在 GitHub 查看全部项目
         </a>
       </div>
     </div>
   </section>
 
-  <!-- About Section -->
+  <!-- 关于我 -->
   <section id="about" class="about">
     <div class="container">
-      <h2 class="section-title">About Me</h2>
+      <h2 class="section-title">关于我</h2>
       <div class="about-content">
         <div class="about-text">
           <p>
-            Hello! I'm <strong>Wolffy1998</strong>, a passionate developer who loves building things on the internet.
-            I enjoy working on diverse projects ranging from web applications to developer tools and open source contributions.
+            你好！我是 <strong>Wolffy1998</strong>，一名热爱编程与创造的开发者。
+            我喜欢参与各类项目，涵盖 Web 应用、开发者工具以及开源社区贡献。
           </p>
           <p>
-            I believe in the power of open source and community-driven development. Feel free to explore my projects,
-            contribute to my repositories, or just reach out for a chat!
+            我相信开源和社区的力量。欢迎浏览我的项目、参与我的仓库，或者随时与我交流！
           </p>
+          <!-- 自定义：修改下方统计数据 -->
           <div class="about-stats">
             <div class="stat">
               <span class="stat-number">4+</span>
-              <span class="stat-label">Projects</span>
+              <span class="stat-label">项目</span>
             </div>
             <div class="stat">
               <span class="stat-number">10+</span>
-              <span class="stat-label">Contributions</span>
+              <span class="stat-label">贡献</span>
             </div>
             <div class="stat">
               <span class="stat-number">∞</span>
-              <span class="stat-label">Curiosity</span>
+              <span class="stat-label">好奇心</span>
             </div>
           </div>
         </div>
@@ -195,21 +209,30 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- 联系方式 -->
   <section id="contact" class="contact">
     <div class="container">
-      <h2 class="section-title">Get in Touch</h2>
-      <p class="section-subtitle">I'd love to hear from you. Here's how you can reach me.</p>
+      <h2 class="section-title">取得联系</h2>
+      <p class="section-subtitle">欢迎随时联系我，以下是可以找到我的方式</p>
 
       <div class="contact-grid">
+        <!--
+          自定义联系卡片：
+          1. 修改 href 为真实的链接（邮箱地址、社交主页等）
+          2. 修改 p 标签内显示的文字
+          3. 图标可在 https://fontawesome.com/icons 查找替换
+        -->
+
+        <!-- 邮箱 -->
         <a href="mailto:wolffy1998@example.com" class="contact-card">
           <div class="contact-icon">
             <i class="fas fa-envelope"></i>
           </div>
-          <h3>Email</h3>
+          <h3>邮箱</h3>
           <p>wolffy1998@example.com</p>
         </a>
 
+        <!-- GitHub -->
         <a href="https://github.com/wolffy1998" target="_blank" rel="noopener" class="contact-card">
           <div class="contact-icon">
             <i class="fab fa-github"></i>
@@ -218,6 +241,7 @@
           <p>@wolffy1998</p>
         </a>
 
+        <!-- Twitter / X -->
         <a href="https://twitter.com/wolffy1998" target="_blank" rel="noopener" class="contact-card">
           <div class="contact-icon">
             <i class="fab fa-x-twitter"></i>
@@ -226,21 +250,22 @@
           <p>@wolffy1998</p>
         </a>
 
+        <!-- Discord -->
         <a href="https://discord.gg/yourserver" target="_blank" rel="noopener" class="contact-card">
           <div class="contact-icon">
             <i class="fab fa-discord"></i>
           </div>
           <h3>Discord</h3>
-          <p>Join my server</p>
+          <p>加入我的服务器</p>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- 页脚 -->
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2024-2026 Wolffy1998. Built with <i class="fas fa-heart"></i> and hosted on GitHub Pages.</p>
+      <p>&copy; 2024-2026 Wolffy1998. 用 <i class="fas fa-heart"></i> 构建，托管于 GitHub Pages。</p>
     </div>
   </footer>
 
