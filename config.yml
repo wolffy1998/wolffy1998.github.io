@@ -52,7 +52,7 @@ projects:
     description: "MAME-SL 游戏列表编辑器。"
     link: "https://wolffy1998.github.io/MAME-SL-GameList/"
     repo: "https://github.com/wolffy1998/MAME-SL-GameList"
-    icon: "fa-solid fa-house"
+    icon: "fa-solid fa-gamepad"
     tags: ["HTML", "GitHub Pages"]
 
 # ---------- 联系方式 ----------
