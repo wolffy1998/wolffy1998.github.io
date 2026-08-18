@@ -8,155 +8,238 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <style>
     :root {
-      --accent: #4f6ef7;
-      --bg: #f5f7fb;
+      --accent: #7c6cf6;
+      --accent-2: #f58ea8;
+      --grad: linear-gradient(135deg, var(--accent), var(--accent-2));
+      --bg: #fbf9fc;
       --card: #ffffff;
-      --text: #1f2430;
-      --text-2: #5b6472;
-      --line: #e6e9f0;
-      --radius: 16px;
-      --shadow: 0 4px 20px rgba(31, 36, 48, 0.06);
-      --shadow-hover: 0 10px 30px rgba(31, 36, 48, 0.12);
+      --text: #2a2438;
+      --text-2: #6f6880;
+      --line: #efeaf3;
+      --radius: 20px;
+      --shadow: 0 6px 24px rgba(124, 108, 246, 0.08);
+      --shadow-hover: 0 16px 40px rgba(124, 108, 246, 0.16);
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
-      font-family: "PingFang SC", "Microsoft YaHei", "Segoe UI", -apple-system, sans-serif;
+      font-family: "PingFang SC", "HarmonyOS Sans SC", "Microsoft YaHei", "Segoe UI", -apple-system, sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.7;
+      line-height: 1.75;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
-    .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+    .container { max-width: 920px; margin: 0 auto; padding: 0 24px; }
+
+    /* ---------- 背景装饰 ---------- */
+    .bg-blob {
+      position: fixed; border-radius: 50%; filter: blur(90px);
+      opacity: .35; z-index: -1; pointer-events: none;
+    }
+    .bg-blob.b1 { width: 480px; height: 480px; top: -160px; right: -120px;
+      background: radial-gradient(circle, var(--accent), transparent 65%); }
+    .bg-blob.b2 { width: 420px; height: 420px; bottom: -140px; left: -140px;
+      background: radial-gradient(circle, var(--accent-2), transparent 65%); }
 
     /* ---------- 顶部导航 ---------- */
     header {
       position: sticky; top: 0; z-index: 10;
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--line);
     }
-    nav { display: flex; align-items: center; justify-content: space-between; height: 60px; }
-    nav .logo { font-weight: 700; font-size: 18px; color: var(--text); text-decoration: none; }
-    nav .logo span { color: var(--accent); }
-    nav ul { display: flex; gap: 28px; list-style: none; }
-    nav ul a { color: var(--text-2); text-decoration: none; font-size: 15px; transition: color .2s; }
-    nav ul a:hover { color: var(--accent); }
+    nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    nav .logo {
+      font-weight: 700; font-size: 18px; color: var(--text); text-decoration: none;
+      letter-spacing: .5px;
+    }
+    nav .logo span {
+      background: var(--grad);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    nav ul { display: flex; gap: 8px; list-style: none; }
+    nav ul a {
+      color: var(--text-2); text-decoration: none; font-size: 14.5px;
+      padding: 6px 14px; border-radius: 999px; transition: all .25s;
+    }
+    nav ul a:hover { color: #fff; background: var(--grad); }
 
     /* ---------- Hero ---------- */
-    .hero { padding: 72px 0 56px; text-align: center; }
-    .avatar {
-      width: 120px; height: 120px; border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #fff;
-      box-shadow: var(--shadow-hover);
-      background: var(--accent);
-      color: #fff; font-size: 44px; font-weight: 700;
+    .hero { padding: 76px 0 40px; text-align: center; }
+    .avatar-ring {
+      width: 136px; height: 136px; margin: 0 auto 22px; border-radius: 50%;
+      padding: 4px; background: var(--grad);
+      box-shadow: 0 12px 32px rgba(124, 108, 246, 0.35);
+    }
+    .avatar-ring img,
+    .avatar-ring .avatar-fallback {
+      width: 100%; height: 100%; border-radius: 50%; object-fit: cover;
+      border: 4px solid #fff; background: var(--accent);
+      color: #fff; font-size: 48px; font-weight: 700;
       display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 20px;
       user-select: none;
     }
-    .hero h1 { font-size: 34px; letter-spacing: 1px; }
-    .hero h1 .wave { display: inline-block; animation: wave 2.2s infinite; transform-origin: 70% 70%; }
-    .hero .job { color: var(--accent); font-weight: 600; margin: 6px 0 4px; }
-    .hero .location { color: var(--text-2); font-size: 14px; }
-    .hero .location i { margin-right: 4px; }
+    .hero h1 {
+      font-size: clamp(28px, 6vw, 40px); letter-spacing: 1px;
+      background: var(--grad);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .hero .wave { display: inline-block; animation: wave 2.4s infinite; transform-origin: 70% 70%; }
+    .job-pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin: 12px 0 0; padding: 6px 18px; border-radius: 999px;
+      background: rgba(255,255,255,.8); border: 1px solid var(--line);
+      color: var(--text); font-size: 15px; font-weight: 600;
+      box-shadow: var(--shadow);
+    }
+    .job-pill i { color: var(--accent); }
+    .hero .location { color: var(--text-2); font-size: 13.5px; margin-top: 10px; }
+    .hero .location i { margin-right: 4px; color: var(--accent-2); }
     .hero .bio {
-      max-width: 620px; margin: 18px auto 0;
-      color: var(--text-2); white-space: pre-line;
+      max-width: 600px; margin: 16px auto 0; color: var(--text-2);
+      white-space: pre-line; font-size: 15.5px;
     }
-    .skills { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 24px; }
+    .skills { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 26px; }
     .skill {
-      background: #fff; border: 1px solid var(--line); border-radius: 999px;
+      background: rgba(255,255,255,.85); border: 1px solid var(--line); border-radius: 999px;
       padding: 5px 16px; font-size: 13px; color: var(--text-2);
-      transition: all .2s;
+      transition: all .25s; box-shadow: 0 2px 8px rgba(124,108,246,.05);
     }
-    .skill:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
-    @keyframes wave { 0%,60%,100% { transform: rotate(0); } 10%,30% { transform: rotate(16deg); } 20% { transform: rotate(-6deg); } }
+    .skill:hover {
+      border-color: transparent; color: #fff; background: var(--grad);
+      transform: translateY(-2px);
+    }
+    @keyframes wave { 0%,60%,100% { transform: rotate(0); } 10%,30% { transform: rotate(18deg); } 20% { transform: rotate(-8deg); } }
 
     /* ---------- 区块 ---------- */
-    section { padding: 40px 0; }
-    .section-title { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
-    .section-title i {
-      width: 40px; height: 40px; border-radius: 12px;
-      background: var(--accent); color: #fff; font-size: 17px;
+    section { padding: 44px 0; }
+    .section-title { display: flex; align-items: center; gap: 14px; margin-bottom: 26px; }
+    .section-title .st-icon {
+      width: 42px; height: 42px; border-radius: 14px; flex-shrink: 0;
+      background: var(--grad); color: #fff; font-size: 17px;
       display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 6px 16px rgba(124, 108, 246, .3);
     }
-    .section-title h2 { font-size: 22px; }
+    .section-title h2 { font-size: 21px; letter-spacing: .5px; }
+    .section-title .st-line { flex: 1; height: 1px; background: var(--line); }
 
     /* ---------- 项目卡片 ---------- */
-    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 20px; }
     .project {
       background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
-      padding: 24px; text-decoration: none; color: var(--text);
-      display: flex; flex-direction: column; gap: 10px;
-      transition: all .25s ease; position: relative; overflow: hidden;
+      padding: 26px; position: relative; overflow: hidden;
+      display: flex; flex-direction: column; gap: 12px;
+      transition: transform .3s ease, box-shadow .3s ease;
     }
-    .project:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); border-color: transparent; text-decoration: none; }
-    .project.highlight { border-color: var(--accent); }
-    .project .p-head { display: flex; align-items: center; gap: 12px; }
-    .project .p-icon {
-      width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
+    .project:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
+    .project::before {
+      content: ""; position: absolute; inset: 0 0 auto 0; height: 4px;
+      background: var(--grad); opacity: 0; transition: opacity .3s;
+    }
+    .project:hover::before, .project.highlight::before { opacity: 1; }
+    .project.highlight { border-color: transparent; box-shadow: var(--shadow); }
+    .p-badge {
+      position: absolute; top: 16px; right: 16px;
+      background: var(--grad); color: #fff; font-size: 11.5px; font-weight: 600;
+      padding: 3px 12px; border-radius: 999px; letter-spacing: 1px;
+    }
+    .p-head { display: flex; align-items: center; gap: 14px; padding-right: 52px; }
+    .p-icon {
+      width: 46px; height: 46px; border-radius: 14px; flex-shrink: 0;
       background: color-mix(in srgb, var(--accent) 12%, white);
       color: var(--accent); font-size: 19px;
       display: flex; align-items: center; justify-content: center;
     }
-    .project h3 { font-size: 17px; }
-    .project .p-badge {
-      position: absolute; top: 14px; right: -30px; transform: rotate(45deg);
-      background: var(--accent); color: #fff; font-size: 11px;
-      padding: 2px 34px;
+    .p-title {
+      font-size: 17px; font-weight: 700; color: var(--text);
+      text-decoration: none; transition: color .2s;
+      display: inline-flex; align-items: center; gap: 8px; flex-wrap: wrap;
     }
+    a.p-title:hover { color: var(--accent); }
+    a.p-title i { font-size: 12px; color: var(--text-2); }
     .project p { color: var(--text-2); font-size: 14px; flex: 1; }
-    .project .p-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-    .project .p-tags span {
-      background: var(--bg); border-radius: 6px; padding: 2px 10px;
-      font-size: 12px; color: var(--text-2);
+    .p-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .p-tags span {
+      background: var(--bg); border: 1px solid var(--line);
+      border-radius: 8px; padding: 2px 10px; font-size: 12px; color: var(--text-2);
     }
-    .project .p-links { display: flex; gap: 16px; margin-top: 4px; }
-    .project .p-links a { color: var(--text-2); font-size: 13px; text-decoration: none; transition: color .2s; }
-    .project .p-links a:hover { color: var(--accent); }
-    .project .p-links i { margin-right: 5px; }
+    .p-links { display: flex; gap: 8px; margin-top: 2px; }
+    .p-links a {
+      color: var(--text-2); font-size: 13px; text-decoration: none;
+      padding: 4px 12px; border-radius: 999px; border: 1px solid var(--line);
+      transition: all .25s; background: #fff;
+    }
+    .p-links a:hover { color: #fff; background: var(--grad); border-color: transparent; }
+    .p-links i { margin-right: 5px; }
 
     /* ---------- 联系方式 ---------- */
-    .contacts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 16px; }
+    .contacts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
     .contact {
       background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
-      padding: 20px; display: flex; align-items: center; gap: 14px;
-      text-decoration: none; color: var(--text); transition: all .25s;
+      padding: 22px; display: flex; align-items: center; gap: 16px;
+      text-decoration: none; color: var(--text);
+      transition: transform .3s ease, box-shadow .3s ease;
     }
-    .contact:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); border-color: transparent; }
-    .contact .c-icon {
-      width: 46px; height: 46px; border-radius: 50%; flex-shrink: 0;
-      background: color-mix(in srgb, var(--accent) 12%, white);
-      color: var(--accent); font-size: 20px;
+    .contact:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+    .c-icon {
+      width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;
+      background: var(--grad); color: #fff; font-size: 20px;
       display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 6px 14px rgba(124, 108, 246, .25);
     }
-    .contact .c-label { font-size: 13px; color: var(--text-2); }
-    .contact .c-value { font-size: 15px; font-weight: 600; word-break: break-all; }
+    .c-label { font-size: 12.5px; color: var(--text-2); }
+    .c-value { font-size: 15px; font-weight: 600; word-break: break-all; }
 
     /* ---------- 页脚 ---------- */
-    footer { border-top: 1px solid var(--line); padding: 28px 0; text-align: center; color: var(--text-2); font-size: 13px; }
+    footer { border-top: 1px solid var(--line); padding: 30px 0; text-align: center; color: var(--text-2); font-size: 13px; }
+    footer .heart { color: var(--accent-2); }
 
     /* ---------- 加载与错误 ---------- */
-    #status { text-align: center; padding: 120px 24px; color: var(--text-2); }
+    #status { text-align: center; padding: 140px 24px; color: var(--text-2); }
     #status .spinner {
-      width: 36px; height: 36px; border: 3px solid var(--line); border-top-color: var(--accent);
+      width: 38px; height: 38px; border: 3px solid var(--line); border-top-color: var(--accent);
       border-radius: 50%; margin: 0 auto 16px; animation: spin .8s linear infinite;
     }
     @keyframes spin { to { transform: rotate(360deg); } }
     #status.error .spinner { display: none; }
-    #status .err-box { text-align: left; max-width: 560px; margin: 0 auto; background: #fff3f3; border: 1px solid #ffd6d6; border-radius: 12px; padding: 20px 24px; }
-    #status .err-box code { background: #ffeaea; padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+    #status .err-box {
+      text-align: left; max-width: 560px; margin: 0 auto;
+      background: #fff5f5; border: 1px solid #ffd9d9; border-radius: 14px; padding: 20px 24px;
+    }
+    #status .err-box code { background: #ffe9e9; padding: 2px 6px; border-radius: 5px; font-size: 13px; }
 
+    /* ---------- 入场动画 ---------- */
+    @media (prefers-reduced-motion: no-preference) {
+      .reveal { animation: rise .7s ease both; }
+      .reveal:nth-child(2) { animation-delay: .08s; }
+      .reveal:nth-child(3) { animation-delay: .16s; }
+      .reveal:nth-child(4) { animation-delay: .24s; }
+      @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+    }
+
+    /* ---------- 移动端适配 ---------- */
     @media (max-width: 640px) {
-      nav ul { gap: 18px; }
-      .hero { padding: 48px 0 40px; }
-      .hero h1 { font-size: 27px; }
+      .container { padding: 0 18px; }
+      nav { height: 56px; }
+      nav .logo { font-size: 16px; }
+      nav ul a { font-size: 13px; padding: 4px 10px; }
+      .hero { padding: 48px 0 28px; }
+      .avatar-ring { width: 112px; height: 112px; }
+      .avatar-ring .avatar-fallback { font-size: 40px; }
+      section { padding: 32px 0; }
+      .projects-grid, .contacts-grid { grid-template-columns: 1fr; }
+      .p-head { padding-right: 0; }
+      .p-badge { position: static; align-self: flex-start; order: -1; }
+      .contact { padding: 18px; }
+      .bg-blob { filter: blur(60px); opacity: .28; }
     }
   </style>
 </head>
 <body>
+
+  <div class="bg-blob b1"></div>
+  <div class="bg-blob b2"></div>
 
   <header>
     <div class="container">
@@ -179,15 +262,16 @@
   <main id="app" style="display:none">
     <!-- 关于我 -->
     <section id="about">
-      <div class="container hero" id="hero"></div>
+      <div class="container hero reveal" id="hero"></div>
     </section>
 
     <!-- 项目 -->
     <section id="projects">
       <div class="container">
-        <div class="section-title">
-          <i class="fa-solid fa-rocket"></i>
+        <div class="section-title reveal">
+          <div class="st-icon"><i class="fa-solid fa-rocket"></i></div>
           <h2>项目展示</h2>
+          <div class="st-line"></div>
         </div>
         <div class="projects-grid" id="projects-grid"></div>
       </div>
@@ -196,9 +280,10 @@
     <!-- 联系方式 -->
     <section id="contact">
       <div class="container">
-        <div class="section-title">
-          <i class="fa-solid fa-paper-plane"></i>
+        <div class="section-title reveal">
+          <div class="st-icon"><i class="fa-solid fa-paper-plane"></i></div>
           <h2>联系我</h2>
+          <div class="st-line"></div>
         </div>
         <div class="contacts-grid" id="contacts-grid"></div>
       </div>
@@ -226,9 +311,12 @@
       const projects = cfg.projects || [];
       const contacts = cfg.contacts || [];
 
-      // 主题色
+      // 主题色：accent 为主色，自动派生渐变副色
       if (site.accent) {
-        document.documentElement.style.setProperty('--accent', site.accent);
+        const root = document.documentElement.style;
+        root.setProperty('--accent', site.accent);
+        root.setProperty('--shadow', `0 6px 24px ${site.accent}22`);
+        root.setProperty('--shadow-hover', `0 16px 40px ${site.accent}30`);
       }
 
       // 标题 / 导航 logo / 页脚
@@ -243,32 +331,35 @@
       const avatar = profile.avatar;
       let avatarHtml = '';
       if (avatar) {
-        avatarHtml = `<img class="avatar" src="${escapeHtml(avatar)}" alt="avatar"
-          onerror="this.outerHTML='<div class=avatar>${escapeHtml(name.charAt(0))}</div>'">`;
+        avatarHtml = `
+          <div class="avatar-ring"><img src="${escapeHtml(avatar)}" alt="avatar"
+            onerror="this.outerHTML='<div class=avatar-fallback>${escapeHtml(name.charAt(0))}</div>'"></div>`;
       } else {
-        avatarHtml = `<div class="avatar">${escapeHtml(name.charAt(0))}</div>`;
+        avatarHtml = `<div class="avatar-ring"><div class="avatar-fallback">${escapeHtml(name.charAt(0))}</div></div>`;
       }
       document.getElementById('hero').innerHTML = `
         ${avatarHtml}
         <h1>${escapeHtml(name)} <span class="wave">👋</span></h1>
-        ${profile.title ? `<div class="job">${escapeHtml(profile.title)}</div>` : ''}
+        ${profile.title ? `<div class="job-pill"><i class="fa-solid fa-code"></i>${escapeHtml(profile.title)}</div>` : ''}
         ${profile.location ? `<div class="location"><i class="fa-solid fa-location-dot"></i>${escapeHtml(profile.location)}</div>` : ''}
-        ${site.slogan ? `<div style="margin-top:6px;color:var(--text-2)">${escapeHtml(site.slogan)}</div>` : ''}
+        ${site.slogan ? `<div style="margin-top:10px;color:var(--text-2)">${escapeHtml(site.slogan)}</div>` : ''}
         ${profile.bio ? `<p class="bio">${escapeHtml(profile.bio)}</p>` : ''}
         ${(profile.skills || []).length ? `<div class="skills">${profile.skills
           .map(s => `<span class="skill">${escapeHtml(s)}</span>`).join('')}</div>` : ''}
       `;
 
-      // 项目区
+      // 项目区 —— 卡片本身是 div，避免 a 嵌套 a 导致布局错乱
       const grid = document.getElementById('projects-grid');
       grid.innerHTML = projects.map(p => {
         const name = p.name || '未命名项目';
-        const link = p.link || p.repo || null;
-        const inner = `
-          ${p.highlight ? '<div class="p-badge">推荐</div>' : ''}
+        const titleHtml = p.link
+          ? `<a class="p-title" href="${escapeHtml(p.link)}" target="_blank" rel="noopener">${escapeHtml(name)}<i class="fa-solid fa-arrow-up-right-from-square"></i></a>`
+          : `<span class="p-title">${escapeHtml(name)}</span>`;
+        return `<div class="project reveal ${p.highlight ? 'highlight' : ''}">
+          ${p.highlight ? '<span class="p-badge">推 荐</span>' : ''}
           <div class="p-head">
             <div class="p-icon">${iconHtml(p.icon || 'fa-solid fa-cube')}</div>
-            <h3>${escapeHtml(name)}</h3>
+            ${titleHtml}
           </div>
           <p>${escapeHtml(p.description || '')}</p>
           ${(p.tags || []).length ? `<div class="p-tags">${p.tags
@@ -277,13 +368,10 @@
             ${p.link ? `<a href="${escapeHtml(p.link)}" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i>在线访问</a>` : ''}
             ${p.repo ? `<a href="${escapeHtml(p.repo)}" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i>源码</a>` : ''}
           </div>` : ''}
-        `;
-        return link
-          ? `<a class="project ${p.highlight ? 'highlight' : ''}" href="${escapeHtml(link)}" target="_blank" rel="noopener">${inner}</a>`
-          : `<div class="project ${p.highlight ? 'highlight' : ''}">${inner}</div>`;
+        </div>`;
       }).join('') || '<p style="color:var(--text-2)">暂无项目，请在 config.yml 中添加。</p>';
 
-      // 联系方式区
+      // 联系方式区（卡片可整体点击，且内部无嵌套链接）
       document.getElementById('contacts-grid').innerHTML = contacts.map(c => {
         const inner = `
           <div class="c-icon">${iconHtml(c.icon || 'fa-solid fa-link')}</div>
@@ -292,12 +380,13 @@
             <div class="c-value">${escapeHtml(c.value || '')}</div>
           </div>`;
         return c.link
-          ? `<a class="contact" href="${escapeHtml(c.link)}" target="_blank" rel="noopener">${inner}</a>`
-          : `<div class="contact">${inner}</div>`;
+          ? `<a class="contact reveal" href="${escapeHtml(c.link)}" target="_blank" rel="noopener">${inner}</a>`
+          : `<div class="contact reveal">${inner}</div>`;
       }).join('') || '<p style="color:var(--text-2)">暂无联系方式，请在 config.yml 中添加。</p>';
 
       // 页脚
-      document.getElementById('footer-text').textContent = site.footer || '';
+      document.getElementById('footer-text').innerHTML =
+        escapeHtml(site.footer || '').replace(/\(c\)|©/i, '©') + ' <span class="heart">♥</span>';
       document.getElementById('footer').style.display = '';
 
       // 显示页面

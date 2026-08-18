@@ -11,8 +11,8 @@ site:
   title: "Wolffy1998 的主页"
   slogan: "代码与像素，都是热爱"
   footer: "© 2026 Wolffy1998 · Powered by GitHub Pages"
-  # 主题色（用于按钮、链接、高亮等），支持任意 CSS 颜色值
-  accent: "#4f6ef7"
+  # 主题色（用于按钮、链接、高亮、渐变等），支持任意 CSS 颜色值
+  accent: "#7c6cf6"
 
 # ---------- 个人信息 ----------
 profile:
