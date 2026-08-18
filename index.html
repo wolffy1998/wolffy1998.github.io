@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>个人主页</title>
   <meta name="description" content="个人主页 - 关于我、项目与联系方式" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="theme-color" content="#0b1020" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <style>
     :root {
@@ -55,12 +57,9 @@
     }
     nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
     nav .logo {
-      font-family: var(--mono);
       font-weight: 700; font-size: 17px; color: var(--text); text-decoration: none;
       letter-spacing: .5px;
     }
-    nav .logo::before { content: "<"; color: var(--accent); }
-    nav .logo::after { content: " />"; color: var(--accent); }
     nav ul { display: flex; gap: 8px; list-style: none; }
     nav ul a {
       color: var(--text-2); text-decoration: none; font-size: 14.5px;
@@ -394,7 +393,7 @@
         </div>`;
     }
 
-    fetch('config.yml')
+    fetch('config.yml', { cache: 'no-store' })
       .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
       .then(text => jsyaml.load(text))
       .then(cfg => { if (!cfg) throw new Error('config.yml 为空'); render(cfg); })
