@@ -2,108 +2,77 @@
 # 个人主页配置文件
 # 修改本文件即可更新页面内容，无需改动 index.html
 # 图标名称参考 Font Awesome 6：https://fontawesome.com/search
-#   品牌图标（如 GitHub / 微信 / 邮箱）：fa-brands fa-github
-#   通用图标（如链接 / 地点 / 星标）：  fa-solid fa-link
+#   品牌图标：fa-brands fa-github / fa-weixin / fa-bilibili
+#   通用图标：fa-solid fa-envelope / fa-link
 # ============================================================
 
 # ---------- 站点信息 ----------
 site:
-  title: "张三的主页"          # 浏览器标签页标题
-  slogan: "Hello World 👋"     # 首页大标题下方的一句话
-  footer: "© 2026 张三 · Powered by GitHub Pages"
+  title: "Wolffy1998 的主页"
+  slogan: "代码与像素，都是热爱"
+  footer: "© 2026 Wolffy1998 · Powered by GitHub Pages"
   # 主题色（用于按钮、链接、高亮等），支持任意 CSS 颜色值
   accent: "#4f6ef7"
 
 # ---------- 个人信息 ----------
 profile:
-  name: "张三"
-  # 头像：可填写在线图片 URL，或把图片命名为 avatar.jpg 放在项目根目录
-  # 留空或不配置时，将显示姓名首字作为默认头像
-  avatar: "avatar.jpg"
-  # 职位 / 身份标题
-  title: "全栈开发工程师"
+  name: "Wolffy1998"
+  # 头像：可填写在线图片 URL，或使用项目内相对路径
+  avatar: "assets/touxiang.jpg"
+  title: "Java 开发工程师 · 怀旧游戏爱好者"
   # 个人简介，支持多行
   bio: |
-    一名热爱开源的开发者，专注于 Web 全栈开发与自动化运维。
-    相信代码改变生活，喜欢把折腾的过程记录成博客分享出来。
-  # 所在地
-  location: "中国 · 深圳"
+    一名 Java 后端开发工程师，日常与 Spring Boot、MySQL 打交道。
+    工作之外是一名怀旧游戏爱好者，喜欢折腾老游戏机、模拟器与复古像素风，
+    偶尔也会用代码复刻一些童年经典小游戏。
+  location: "中国"
   # 技能标签（随意增删）
   skills:
-    - "JavaScript"
-    - "TypeScript"
-    - "Python"
-    - "Vue"
-    - "React"
-    - "Node.js"
-    - "Docker"
+    - "Java"
+    - "Spring Boot"
+    - "MySQL"
+    - "Redis"
     - "Linux"
+    - "Docker"
 
 # ---------- 项目展示 ----------
-# 每个项目的字段：
-#   name        项目名称（必填）
-#   description 项目简介（必填）
-#   link        项目在线地址（可选）
-#   repo        GitHub 仓库地址（可选）
-#   icon        项目图标（Font Awesome 类名或 emoji）
-#   tags        技术标签列表（可选）
-#   highlight   true 时卡片会高亮显示（可选）
+# 按需增删条目，字段：
+#   name / description / link（在线地址）/ repo（仓库地址）/ icon / tags / highlight
 projects:
-  - name: "个人博客"
-    description: "基于 Hexo 搭建的静态博客，记录技术笔记与生活随笔。"
-    link: "https://example.com/blog"
-    repo: "https://github.com/yourname/blog"
-    icon: "fa-solid fa-pen-nib"
-    tags: ["Hexo", "博客"]
+  - name: "个人主页"
+    description: "本站。由 config.yml 驱动的静态主页，部署在 GitHub Pages。"
+    link: "https://wolffy1998.github.io"
+    repo: "https://github.com/wolffy1998/wolffy1998.github.io"
+    icon: "fa-solid fa-house"
+    tags: ["HTML", "GitHub Pages"]
     highlight: true
 
-  - name: "在线工具箱"
-    description: "收录了 JSON 格式化、正则测试、时间戳转换等常用小工具。"
-    link: "https://example.com/tools"
-    repo: "https://github.com/yourname/tools"
-    icon: "fa-solid fa-toolbox"
-    tags: ["Vue 3", "Vite"]
-
-  - name: "Server 面板"
-    description: "轻量级服务器监控面板，实时查看 CPU / 内存 / 网络状态。"
-    link: "https://example.com/panel"
-    repo: "https://github.com/yourname/panel"
-    icon: "fa-solid fa-chart-line"
-    tags: ["Python", "FastAPI"]
-
-  - name: "书签导航站"
-    description: "自用的程序员导航站，收录常用开发文档与资源站点。"
-    link: "https://example.com/nav"
-    icon: "fa-solid fa-compass"
-    tags: ["HTML", "静态页面"]
+  # ↓ 参考模板：复制粘贴后改成你自己的项目，不需要就删掉或整段注释
+  # - name: "项目名称"
+  #   description: "一句话项目简介。"
+  #   link: "https://项目在线地址"
+  #   repo: "https://github.com/wolffy1998/仓库名"
+  #   icon: "fa-solid fa-cube"
+  #   tags: ["Java", "Spring Boot"]
 
 # ---------- 联系方式 ----------
-# 每个联系方式的字段：
-#   label  显示名称（必填）
-#   value  显示内容（必填，如邮箱号、微信号）
-#   link   点击跳转链接（可选，如 mailto: 邮箱、GitHub 主页）
-#   icon   图标（Font Awesome 类名）
+# 字段：label 显示名称 / value 显示内容 / link 点击跳转（可选）/ icon 图标
 contacts:
   - label: "GitHub"
-    value: "@yourname"
-    link: "https://github.com/yourname"
+    value: "@wolffy1998"
+    link: "https://github.com/wolffy1998"
     icon: "fa-brands fa-github"
 
   - label: "邮箱"
-    value: "zhangsan@example.com"
-    link: "mailto:zhangsan@example.com"
+    value: "wolffy1998@example.com"
+    link: "mailto:wolffy1998@example.com"
     icon: "fa-solid fa-envelope"
 
-  - label: "微信"
-    value: "wxid_xxxxxx"
+  - label: "微信公众号"
+    value: "公众号名称"
     icon: "fa-brands fa-weixin"
 
   - label: "哔哩哔哩"
-    value: "@张三的开发日常"
+    value: "@Wolffy1998"
     link: "https://space.bilibili.com/xxxxx"
     icon: "fa-brands fa-bilibili"
-
-  - label: "掘金"
-    value: "@张三"
-    link: "https://juejin.cn/user/xxxxx"
-    icon: "fa-solid fa-book-open"

@@ -2,15 +2,19 @@
 
 一个基于 **GitHub Pages** 的静态个人主页，介绍自己、展示部署的项目和联系方式。
 
+> 🌐 线上地址：<https://wolffy1998.github.io>
+> 📦 仓库：`wolffy1998/wolffy1998.github.io`（用户主页仓库，部署在根路径）
+
 页面内容全部由根目录的 **`config.yml`** 驱动 —— 修改配置即可更新页面，**无需改动任何代码**。
 
 ## 📁 项目结构
 
 ```
-personal-homepage/
+wolffy1998.github.io/
 ├── index.html    # 页面（读取 config.yml 渲染，一般不用动）
 ├── config.yml    # ⭐ 所有内容配置：个人信息 / 项目 / 联系方式 / 图标
-├── avatar.jpg    # （可选）头像图片，命名为 avatar.jpg 放根目录即可
+├── assets/       # 静态资源（头像 touxiang.jpg 等）
+├── .nojekyll     # 禁用 Jekyll 处理，文件原样发布
 └── README.md     # 本文档
 ```
 
