@@ -48,52 +48,10 @@ projects:
     icon: "fa-solid fa-house"
     tags: ["HTML", "GitHub Pages"]
 
-  - name: "个人主页"
-    description: "本站。由 config.yml 驱动的静态主页，部署在 GitHub Pages。"
-    link: "https://wolffy1998.github.io"
-    repo: "https://github.com/wolffy1998/wolffy1998.github.io"
-    icon: "fa-solid fa-house"
-    tags: ["HTML", "GitHub Pages"]
-
-  - name: "个人主页"
-    description: "本站。由 config.yml 驱动的静态主页，部署在 GitHub Pages。"
-    link: "https://wolffy1998.github.io"
-    repo: "https://github.com/wolffy1998/wolffy1998.github.io"
-    icon: "fa-solid fa-house"
-    tags: ["HTML", "GitHub Pages"]
-
-  - name: "个人主页"
-    description: "本站。由 config.yml 驱动的静态主页，部署在 GitHub Pages。"
-    link: "https://wolffy1998.github.io"
-    repo: "https://github.com/wolffy1998/wolffy1998.github.io"
-    icon: "fa-solid fa-house"
-    tags: ["HTML", "GitHub Pages"]
-
-  - name: "个人主页"
-    description: "本站。由 config.yml 驱动的静态主页，部署在 GitHub Pages。"
-    link: "https://wolffy1998.github.io"
-    repo: "https://github.com/wolffy1998/wolffy1998.github.io"
-    icon: "fa-solid fa-house"
-    tags: ["HTML", "GitHub Pages"]
-
-  - name: "个人主页"
-    description: "本站。由 config.yml 驱动的静态主页，部署在 GitHub Pages。"
-    link: "https://wolffy1998.github.io"
-    repo: "https://github.com/wolffy1998/wolffy1998.github.io"
-    icon: "fa-solid fa-house"
-    tags: ["HTML", "GitHub Pages"]
-
-  - name: "个人主页"
-    description: "本站。由 config.yml 驱动的静态主页，部署在 GitHub Pages。"
-    link: "https://wolffy1998.github.io"
-    repo: "https://github.com/wolffy1998/wolffy1998.github.io"
-    icon: "fa-solid fa-house"
-    tags: ["HTML", "GitHub Pages"]
-
-  - name: "个人主页"
-    description: "本站。由 config.yml 驱动的静态主页，部署在 GitHub Pages。"
-    link: "https://wolffy1998.github.io"
-    repo: "https://github.com/wolffy1998/wolffy1998.github.io"
+  - name: "MAME-SL 游戏列表编辑器"
+    description: "MAME-SL 游戏列表编辑器。"
+    link: "https://wolffy1998.github.io/MAME-SL-GameList/"
+    repo: "https://github.com/wolffy1998/MAME-SL-GameList"
     icon: "fa-solid fa-house"
     tags: ["HTML", "GitHub Pages"]
 
