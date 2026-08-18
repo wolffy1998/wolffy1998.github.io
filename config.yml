@@ -12,13 +12,14 @@ site:
   slogan: "代码与像素，都是热爱"
   footer: "© 2026 Wolffy1998 · Powered by GitHub Pages"
   # 主题色（用于按钮、链接、高亮、渐变等），支持任意 CSS 颜色值
-  accent: "#7c6cf6"
+  accent: "#3b82f6"
 
 # ---------- 个人信息 ----------
 profile:
   name: "Wolffy1998"
-  # 头像：可填写在线图片 URL，或使用项目内相对路径
-  avatar: "assets/touxiang.jpg"
+  # 头像：文件放在项目根目录，文件名和后缀都在这里定义（如 avatar.png / avatar.webp）
+  # 也可直接填在线图片 URL；不配置时显示姓名首字作为默认头像
+  avatar: "avatar.jpg"
   title: "Java 开发工程师 · 怀旧游戏爱好者"
   # 个人简介，支持多行
   bio: |
@@ -37,23 +38,64 @@ profile:
 
 # ---------- 项目展示 ----------
 # 按需增删条目，字段：
-#   name / description / link（在线地址）/ repo（仓库地址）/ icon / tags / highlight
+#   name / description / link（在线地址）/ repo（仓库地址，不配则不显示源码按钮）/ icon / tags
 projects:
+  # ↓↓↓ 以下 8 条为测试数据（重复内容），用于验证多卡片布局，上线前请替换成真实项目
   - name: "个人主页"
     description: "本站。由 config.yml 驱动的静态主页，部署在 GitHub Pages。"
     link: "https://wolffy1998.github.io"
     repo: "https://github.com/wolffy1998/wolffy1998.github.io"
     icon: "fa-solid fa-house"
     tags: ["HTML", "GitHub Pages"]
-    highlight: true
 
-  # ↓ 参考模板：复制粘贴后改成你自己的项目，不需要就删掉或整段注释
-  # - name: "项目名称"
-  #   description: "一句话项目简介。"
-  #   link: "https://项目在线地址"
-  #   repo: "https://github.com/wolffy1998/仓库名"
-  #   icon: "fa-solid fa-cube"
-  #   tags: ["Java", "Spring Boot"]
+  - name: "个人主页"
+    description: "本站。由 config.yml 驱动的静态主页，部署在 GitHub Pages。"
+    link: "https://wolffy1998.github.io"
+    repo: "https://github.com/wolffy1998/wolffy1998.github.io"
+    icon: "fa-solid fa-house"
+    tags: ["HTML", "GitHub Pages"]
+
+  - name: "个人主页"
+    description: "本站。由 config.yml 驱动的静态主页，部署在 GitHub Pages。"
+    link: "https://wolffy1998.github.io"
+    repo: "https://github.com/wolffy1998/wolffy1998.github.io"
+    icon: "fa-solid fa-house"
+    tags: ["HTML", "GitHub Pages"]
+
+  - name: "个人主页"
+    description: "本站。由 config.yml 驱动的静态主页，部署在 GitHub Pages。"
+    link: "https://wolffy1998.github.io"
+    repo: "https://github.com/wolffy1998/wolffy1998.github.io"
+    icon: "fa-solid fa-house"
+    tags: ["HTML", "GitHub Pages"]
+
+  - name: "个人主页"
+    description: "本站。由 config.yml 驱动的静态主页，部署在 GitHub Pages。"
+    link: "https://wolffy1998.github.io"
+    repo: "https://github.com/wolffy1998/wolffy1998.github.io"
+    icon: "fa-solid fa-house"
+    tags: ["HTML", "GitHub Pages"]
+
+  - name: "个人主页"
+    description: "本站。由 config.yml 驱动的静态主页，部署在 GitHub Pages。"
+    link: "https://wolffy1998.github.io"
+    repo: "https://github.com/wolffy1998/wolffy1998.github.io"
+    icon: "fa-solid fa-house"
+    tags: ["HTML", "GitHub Pages"]
+
+  - name: "个人主页"
+    description: "本站。由 config.yml 驱动的静态主页，部署在 GitHub Pages。"
+    link: "https://wolffy1998.github.io"
+    repo: "https://github.com/wolffy1998/wolffy1998.github.io"
+    icon: "fa-solid fa-house"
+    tags: ["HTML", "GitHub Pages"]
+
+  - name: "个人主页"
+    description: "本站。由 config.yml 驱动的静态主页，部署在 GitHub Pages。"
+    link: "https://wolffy1998.github.io"
+    repo: "https://github.com/wolffy1998/wolffy1998.github.io"
+    icon: "fa-solid fa-house"
+    tags: ["HTML", "GitHub Pages"]
 
 # ---------- 联系方式 ----------
 # 字段：label 显示名称 / value 显示内容 / link 点击跳转（可选）/ icon 图标
@@ -64,15 +106,15 @@ contacts:
     icon: "fa-brands fa-github"
 
   - label: "邮箱"
-    value: "wolffy1998@example.com"
-    link: "mailto:wolffy1998@example.com"
+    value: "wolffy1998@foxmail.com"
+    link: "mailto:wolffy1998@foxmail.com"
     icon: "fa-solid fa-envelope"
 
   - label: "微信公众号"
-    value: "公众号名称"
+    value: "红白机时空舱"
     icon: "fa-brands fa-weixin"
 
   - label: "哔哩哔哩"
-    value: "@Wolffy1998"
-    link: "https://space.bilibili.com/xxxxx"
+    value: "红白机时空舱"
+    link: "https://space.bilibili.com/401947909?spm_id_from=333.1007.0.0"
     icon: "fa-brands fa-bilibili"

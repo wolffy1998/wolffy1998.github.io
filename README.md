@@ -12,8 +12,8 @@
 ```
 wolffy1998.github.io/
 ├── index.html    # 页面（读取 config.yml 渲染，一般不用动）
-├── config.yml    # ⭐ 所有内容配置：个人信息 / 项目 / 联系方式 / 图标
-├── assets/       # 静态资源（头像 touxiang.jpg 等）
+├── config.yml    # ⭐ 所有内容配置：个人信息 / 项目 / 联系方式 / 图标 / 头像文件名
+├── avatar.jpg    # 头像图片（文件名在 config.yml 的 profile.avatar 中定义）
 ├── .nojekyll     # 禁用 Jekyll 处理，文件原样发布
 └── README.md     # 本文档
 ```
@@ -28,27 +28,50 @@ wolffy1998.github.io/
 |---|---|
 | `site` | 站点标题、标语、页脚、主题色 `accent` |
 | `profile` | 姓名、头像、职位、简介、所在地、技能标签 |
-| `projects` | 项目列表：名称、简介、在线地址、仓库、图标、标签、是否推荐 |
+| `projects` | 项目列表：名称、简介、在线地址、仓库、图标、标签 |
 | `contacts` | 联系方式：邮箱、GitHub、微信、B 站等 |
 
 ### 2. 头像（可选）
 
-两种方式任选：
+头像文件放在**项目根目录**，文件名和后缀在 `config.yml` 中定义，二者保持一致即可：
 
-- 把头像图片命名为 `avatar.jpg` 放在项目根目录；
-- 或在 `config.yml` 中把 `profile.avatar` 改成任意在线图片 URL。
+```yaml
+profile:
+  avatar: "avatar.jpg"    # 默认名 avatar.jpg，改成 avatar.png / avatar.webp 等都行
+```
 
-不配置头像时会自动显示姓名首字作为默认头像。
+也支持直接填在线图片 URL（`https://...`）。不配置头像时会自动显示姓名首字作为默认头像；配置的图片加载失败时同样会回退显示首字。
 
 ### 3. 图标说明
 
-所有图标使用 [Font Awesome 6](https://fontawesome.com/search) 类名，直接写在配置里，例如：
+页面所有图标来自 **[Font Awesome 6](https://fontawesome.com/search)**（免费版，通过 cdnjs CDN 引入，无需安装任何东西）。
+
+**如何找到想要的图标：**
+
+1. 打开 <https://fontawesome.com/search>；
+2. 搜索关键词（英文），如 `github`、`wechat`、`bilibili`、`envelope`、`gamepad`；
+3. 点进图标详情页，复制它的类名（Class），格式为 `样式前缀 + 图标名`；
+4. 把类名填到 `config.yml` 的 `icon` 字段即可。
+
+**三种常用前缀：**
+
+| 前缀 | 含义 | 示例 |
+|---|---|---|
+| `fa-brands` | 品牌 Logo（GitHub、微信、B 站、知乎…） | `fa-brands fa-github` |
+| `fa-solid` | 实心通用图标（邮箱、火箭、游戏手柄…） | `fa-solid fa-envelope` |
+| `fa-regular` | 线性通用图标 | `fa-regular fa-heart` |
 
 ```yaml
-icon: "fa-brands fa-github"     # 品牌图标（GitHub、微信、B 站…）
-icon: "fa-solid fa-envelope"    # 通用图标（邮箱、链接、火箭…）
-icon: "🚀"                       # 也支持直接写 emoji
+# 项目图标
+- name: "个人主页"
+  icon: "fa-solid fa-house"
+
+# 联系方式图标
+- label: "GitHub"
+  icon: "fa-brands fa-github"
 ```
+
+> 💡 也支持直接写 emoji（如 `icon: "🚀"`），页面会原样显示，适合不想查图标类名的场景。
 
 ## 💻 本地预览
 
